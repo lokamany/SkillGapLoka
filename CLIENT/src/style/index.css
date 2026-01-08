@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-cyan: #22d3ee;
+}
+
+/* Light Mode Styling */
+:root:not(.dark) {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+  --card: #ffffff;
+  --card-border: rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Mode (Default) Styling */
+:root.dark {
+  --background: #020617;
+  --foreground: #f8fafc;
+  --card: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Apply this class to your cards in Dashboard/Roadmap */
+.glass-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  backdrop-blur: 16px;
+}
